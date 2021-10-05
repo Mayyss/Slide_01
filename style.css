@@ -32,7 +32,6 @@ main{
     gap: 15px;
     flex-wrap: wrap;
     padding: 15px;
-    overflow: hidden;
 }
 
 .galeria_itens{
@@ -41,13 +40,14 @@ main{
     height: 240px;
     flex-grow: 1;
     transition: all .5s ease-in-out;
+    overflow: hidden;
 }
 
 .galeria_itens img{
     height: 100%;
     width: 100%;
     object-fit: cover;
-    object-position: top;
+    /* object-position: top; */
     filter: grayscale(100%);
     border-radius: 15px;
     transition: all .2s linear;
@@ -57,7 +57,7 @@ main{
     filter: grayscale(0%);
     border:0px;
     transform: scale(1.05);
-    z-index: 10;
+    /* z-index: 10; */
 }
 
 
@@ -83,15 +83,16 @@ main{
     align-items: center;
     z-index: -999;
     opacity: 0;
-    transition: opacity .5s linear;
+    /* transition: opacity .5s linear; */
 }
 
 #slide:target{
     z-index: 999;
     opacity: 1;
+    transition: all .5s linear;
 }
 
-#slide_container img{
+#slide .imagem_container img{
     width: 100%;
     height: 100%;
 }
@@ -108,8 +109,8 @@ main{
     align-items: center;
     font-size: 1.5rem;
     text-decoration: none;
-    transition: all .5s linear;
-    z-index: 3;
+    transition: opacity .5s linear;
+    /* z-index: 3; */
 
 }
 
@@ -126,7 +127,7 @@ main{
 .imagem_container{
     width: 90%;
     height: 90%;
-    /* background-color: yellow; */
+    background-color: yellow;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -148,10 +149,10 @@ main{
     font-size: 2rem;
     color: white;
     background-color: #0005;
-    text-decoration: none;
-    /* transition: all .5s linear;
+    /* text-decoration: none; */
+    /* transition: all .5s linear; */
     z-index: 3;
-    opacity: 0; */
+    /* opacity: 0; */
 }
 
 #slide .navegacao:hover{
@@ -160,10 +161,12 @@ main{
 }
 
 #slide .anterior{
+    position: absolute;
     left: 0;
 }
 
 #slide .proximo{
+    position: absolute;
     right: 0;
 }
 
